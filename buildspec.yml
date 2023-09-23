@@ -11,8 +11,8 @@ phases:
   build:
     commands:
       - echo Building and packaging Lambda functions...
-      - dotnet publish EmailDeliveryProcessorLambdaFunction/src -c Release -o ./publish/EmailDeliveryProcessorLambdaFunction
-      - dotnet publish SMSDeliveryLambdaFunction/src -c Release -o ./publish/SMSDeliveryLambdaFunction
+      - dotnet publish EmailDeliveryProcessorLambdaFunction/src/EmailDeliveryProcessorLambdaFunction/EmailDeliveryProcessorLambdaFunction.csproj -c Release -o ./publish/EmailDeliveryProcessorLambdaFunction
+      - dotnet publish SMSDeliveryLambdaFunction/src/SMSDeliveryLambdaFunction/SMSDeliveryLambdaFunction.csproj -c Release -o ./publish/SMSDeliveryLambdaFunction
 artifacts:
   files:
     - './publish/**/*'
