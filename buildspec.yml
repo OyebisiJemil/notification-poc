@@ -6,8 +6,8 @@ phases:
       dotnet: latest
     commands:
       - echo Restoring NuGet packages...
-      - dotnet restore EmailDeliveryProcessorLambdaFunction/src/EmailDeliveryProcessorLambdaFunction.csproj
-      - dotnet restore SMSDeliveryLambdaFunction/src/SMSDeliveryLambdaFunction.csproj
+      - dotnet restore EmailDeliveryProcessorLambdaFunction/src/EmailDeliveryProcessorLambdaFunction/EmailDeliveryProcessorLambdaFunction.csproj
+      - dotnet restore SMSDeliveryLambdaFunction/src/SMSDeliveryLambdaFunction/SMSDeliveryLambdaFunction.csproj
   build:
     commands:
       - echo Building and packaging Lambda functions...
