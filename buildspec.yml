@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 6
+    commands:
+      - echo Restoring NuGet packages...
+      - dotnet restore EmailDeliveryProcessorLambdaFunction/src/EmailDeliveryProcessorLambdaFunction.csproj
+      - dotnet restore SMSDeliveryLambdaFunction/src/SMSDeliveryLambdaFunction.csproj
+  build:
+    commands:
+      - echo Building and packaging Lambda functions...
+      - dotnet publish EmailDeliveryProcessorLambdaFunction/src -c Release -o ./publish/EmailDeliveryProcessorLambdaFunction
+      - dotnet publish SMSDeliveryLambdaFunction/src -c Release -o ./publish/SMSDeliveryLambdaFunction
+artifacts:
+  files:
+    - './publish/**/*'
+    - 'deploy/template.yaml'
