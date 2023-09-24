@@ -16,4 +16,4 @@ phases:
 artifacts:
   files:
     - './publish/**/*'
-    - 'deploy/template.yaml'
+    - 'deploy/template.yml'
